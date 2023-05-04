@@ -21,7 +21,7 @@ let package = Package(
         .binaryTarget(
                     name: "VideoID",
                     url:"https://eid-librerias-ios.s3.eu-west-1.amazonaws.com/VideoID/7.1.33/VideoID.xcframework.zip",
-                    checksum: "0c0bb5197585b3c9e6df9461012e8968ff2598694370690e9d779114588bddf5"),
+                    checksum: "c43f3a74f7fe54b920b3f5e29ae399e0e731195b2dd9f87b39813ac560cb6a20"),
         .target(name: "_VideoIDStub",
                dependencies: dependencies)
     ]
