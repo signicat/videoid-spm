@@ -3,26 +3,30 @@
 
 import PackageDescription
 
+let version: String = "7.1.40"
+
 let dependencies: [Target.Dependency] = [
     .product(name: "WebRTC", package: "eidwebrtc-spm"),
 ]
 
 let package = Package(
     name: "VideoID",
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "VideoID",
             targets: ["VideoID", "_VideoIDStub"]),
     ],
     dependencies: [
-        .package(url: "https://gitlab.electronicid.eu/eid-public/eid-sdk/eidwebrtc-spm", branch: "main")
+        .package(url: "https://github.com/signicat/eidwebrtc-spm", from: "1.1.37")
     ],
     targets: [
         .binaryTarget(
                     name: "VideoID",
-                    url:"https://eid-librerias-ios.s3.eu-west-1.amazonaws.com/VideoID/7.1.33/VideoID.xcframework.zip",
-                    checksum: "c43f3a74f7fe54b920b3f5e29ae399e0e731195b2dd9f87b39813ac560cb6a20"),
+                    url:"https://eid-librerias-ios.s3.eu-west-1.amazonaws.com/VideoID/\(version)/VideoID.xcframework.zip",
+                    checksum: "8c1765256e84bfb41fe6c9424d12bfaa126492ca73c240a5d38f6dc6d6022870"),
         .target(name: "_VideoIDStub",
                dependencies: dependencies)
     ]
 )
+
